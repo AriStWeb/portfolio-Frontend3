@@ -1,0 +1,29 @@
+<!--BANNER-->
+<div id="contenedorBanner">
+  <div id="contenedor-fondo-banner">
+    <div id="fondo-banner">
+      <div id="espacio-foto-banner">
+        <img src={{header.bannerImg}} id="foto-banner">
+      </div>
+      <div id="frase-banner">
+        <h3 class="text-center">{{header.bannerPhrase}}</h3>
+        <p>{{header.bannerDetail}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="controlEdit">
+    <button href="#" style="background-color: aliceblue;" (click)="abrirVentanaEdit()"><i
+        class="fa-solid fa-pencil"></i></button>
+  </div>
+
+  <!--ventana de Edicion de Banner-->
+  <form *ngIf="edit" id="ventanaEdit" enctype="multipart/form-data">
+    <input type="file" accept=".png, .jpg, .jpeg" class="text-primary" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="bannerImg"> 
+    <input type="text" name="bannerPhase" placeholder="escribe tu frase de Banner" [(ngModel)]="bannerPhase">
+    <input type="text" name="bannerResume" placeholder="escribe tus detalles de Banner" [(ngModel)]="bannerResume">
+    <div class="col m-auto">
+      <input type="submit" value="guardar" class="m-2" (click)="changeBanner()">
+      <input type="reset" value="cancelar" (click)="abrirVentanaEdit()">
+    </div>
+  </form>
+</div>

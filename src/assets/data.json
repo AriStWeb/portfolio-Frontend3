@@ -1,0 +1,32 @@
+{
+    "header": {
+        "bannerImg": "../asset/bannerImg",
+        "bannerPhrase": "fraseBanner",
+        "bannerDetail": "detalles de banner"
+    },
+    "aboutMe": {
+        "picture": "imagenProfile",
+        "title": "Desarrollador Backend",
+        "name": "nombre **************",
+        "resume": "*******************"
+    },
+    "experiencie": {
+        "picture": "imagen experiencia",
+        "title": "esperiencia laboral 1",
+        "resume": "pequeña reseña de experiencia laboral"
+    },
+    "education":{
+        "picture": "imagen de educacion 1",
+        "title": "titulo de experiencia",
+        "resume": "pequeña reseña de formacion"
+    },
+    "abilities": {
+        "ability": "nombre de habilidad",
+        "porcent": "porcentaje"
+    },
+    "proyect": {
+        "picture": "imagen de proyecto",
+        "title": "titulo de proyecto",
+        "resume": "pequeña reseña de proyecto"
+    }
+}
