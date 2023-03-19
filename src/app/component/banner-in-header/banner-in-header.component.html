@@ -3,11 +3,11 @@
   <div id="contenedor-fondo-banner">
     <div id="fondo-banner">
       <div id="espacio-foto-banner">
-        <img src={{header.bannerImg}} id="foto-banner">
+        <img src={{dataPortfolio.header.bannerImg}} id="foto-banner">
       </div>
       <div id="frase-banner">
-        <h3 class="text-center">{{header.bannerPhrase}}</h3>
-        <p>{{header.bannerDetail}}</p>
+        <h3 class="text-center">{{dataPortfolio.header.bannerPhrase}}</h3>
+        <p>{{dataPortfolio.header.bannerDetail}}</p>
       </div>
     </div>
   </div>
@@ -19,10 +19,10 @@
   <!--ventana de Edicion de Banner-->
   <form *ngIf="edit" id="ventanaEdit" enctype="multipart/form-data">
     <input type="file" accept=".png, .jpg, .jpeg" class="text-primary" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="bannerImg"> 
-    <input type="text" name="bannerPhase" placeholder="escribe tu frase de Banner" [(ngModel)]="bannerPhase">
-    <input type="text" name="bannerResume" placeholder="escribe tus detalles de Banner" [(ngModel)]="bannerResume">
+    <input type="text" name="bannerPhase" placeholder="escribe tu frase de Banner" [(ngModel)]="bannerPhrase">
+    <input type="text" name="bannerResume" placeholder="escribe tus detalles de Banner" [(ngModel)]="bannerDetail">
     <div class="col m-auto">
-      <input type="submit" value="guardar" class="m-2" (click)="changeBanner()">
+      <input type="submit" value="guardar" class="m-2" (click)="changeBanner()" (click)="abrirVentanaEdit()">
       <input type="reset" value="cancelar" (click)="abrirVentanaEdit()">
     </div>
   </form>

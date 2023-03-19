@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { BannerInHeaderComponent } from './component/banner-in-header/banner-in-header.component';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
   imports: [
     BrowserModule,
     FormsModule,
-    AlifeFileToBase64Module
+    AlifeFileToBase64Module,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

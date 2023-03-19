@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataProviderService } from 'src/app/services/data-provider.service';
+
 
 @Component({
   selector: 'app-banner-in-header',
@@ -7,12 +9,22 @@ import { Component } from '@angular/core';
 })
 
 export class BannerInHeaderComponent {
-  header= {bannerImg: "./assets/bannerImg.png",bannerPhrase: "fraseBanner",bannerDetail: "detalles de banner"};
+  dataPortfolio:any;
   edit:boolean = false;
-  bannerImg:any = null;
-  bannerPhase:string ="";
-  bannerResume:string ="";
+  bannerImg:any;
+  bannerPhrase:string ="";
+  bannerDetail:string ="";
 
+  constructor(private dataProvider:DataProviderService){
+
+  }
+
+  ngOnInit(): void {
+    this.dataProvider.getData().subscribe(data => {
+      console.log(data.logo);
+      this.dataPortfolio = data;
+    });
+  }
   abrirVentanaEdit(): void{
     if(this.edit){
       this.edit=false; 
@@ -23,13 +35,14 @@ export class BannerInHeaderComponent {
   }
 
   onFileChanges(event:any){
-    this.bannerImg=event[0].base64;
+    this.bannerImg = event[0].base64;
   }
 
   changeBanner(){
-    this.header.bannerImg = this.bannerImg;
-    this.header.bannerPhrase = this.bannerPhase;
-    this.header.bannerDetail = this.bannerResume;
+    this.dataPortfolio.header.bannerImg = this.bannerImg;
+    this.dataPortfolio.header.bannerPhrase = this.bannerPhrase;
+    this.dataPortfolio.header.bannerDetail = this.bannerDetail;
+
   }
     
 }
