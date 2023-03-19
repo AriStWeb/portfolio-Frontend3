@@ -9,15 +9,15 @@ import { DataProviderService } from 'src/app/services/data-provider.service';
 
 export class HeaderComponent {
 
-  dataPortfolio:any;
-  constructor (private dataProvider:DataProviderService){
+  dataPortfolio: any;
+  constructor(private dataProvider: DataProviderService) {
 
   }
 
-  ngOnInit():void{
-    this.dataProvider.getData().subscribe(data => {
+  ngOnInit(): void {
+    this.dataProvider.getData().subscribe(data=>{
       console.log(data.logo);
-      this.dataPortfolio=data;
+      this.dataPortfolio = data;
     });
   }
 
