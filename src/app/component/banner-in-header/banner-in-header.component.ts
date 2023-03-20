@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { DataProviderService } from 'src/app/services/data-provider.service';
 
 
@@ -9,6 +9,7 @@ import { DataProviderService } from 'src/app/services/data-provider.service';
 })
 
 export class BannerInHeaderComponent {
+  userLog:boolean=true; //esto lo resibira de componente login
   dataPortfolio:any;
   edit:boolean = false;
   bannerImg:any;
@@ -25,24 +26,12 @@ export class BannerInHeaderComponent {
       this.dataPortfolio = data;
     });
   }
-  abrirVentanaEdit(): void{
-    if(this.edit){
-      this.edit=false; 
-    }
-    else{
-      this.edit=true;
-    }
+
+  processData(dataPortfolio:any) {
+   this.dataPortfolio.header.bannerImg=dataPortfolio.img;
+   this.dataPortfolio.header.bannerPhrase=dataPortfolio.text;
+   this.dataPortfolio.header.bannerDetail=dataPortfolio.text2;
   }
 
-  onFileChanges(event:any){
-    this.bannerImg = event[0].base64;
-  }
 
-  changeBanner(){
-    this.dataPortfolio.header.bannerImg = this.bannerImg;
-    this.dataPortfolio.header.bannerPhrase = this.bannerPhrase;
-    this.dataPortfolio.header.bannerDetail = this.bannerDetail;
-
-  }
-    
 }

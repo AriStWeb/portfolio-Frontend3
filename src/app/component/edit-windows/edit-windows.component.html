@@ -1,0 +1,16 @@
+<div class="controlEdit">
+    <button style="background-color: aliceblue;" (click)="abrirVentanaEdit()"><i
+    class="fa-solid fa-pencil"></i></button>
+    <button style="background-color: aliceblue;" (click)="delete()" *ngIf="btnDelete"><i class="fa-solid fa-trash-can"></i></button>
+</div>
+
+<!--ventana de Edicion de Banner-->
+<form *ngIf="edit" id="ventanaEdit" enctype="multipart/form-data" class="w-100" >
+<input type="file" accept=".png, .jpg, .jpeg" class="text-primary" alife-file-to-base64 (onFileChanged)="onFileChanges($event)" [(ngModel)]="Img"> 
+<input type="text" name="bannerPhase" placeholder="escribe tu frase de Banner" [(ngModel)]="Phrase">
+<input type="text" name="bannerResume" placeholder="escribe tus detalles de Banner" [(ngModel)]="Detail">
+<div class="col m-auto">
+  <input type="submit" value="guardar" class="m-2" (click)="change()" (click)="abrirVentanaEdit()">
+  <input type="reset" value="cancelar" (click)="abrirVentanaEdit()">
+</div>
+</form>

@@ -7,12 +7,14 @@ import { HeaderComponent } from './component/header/header.component';
 import { BannerInHeaderComponent } from './component/banner-in-header/banner-in-header.component';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {HttpClientModule} from '@angular/common/http';
+import { EditWindowsComponent } from './component/edit-windows/edit-windows.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BannerInHeaderComponent
+    BannerInHeaderComponent,
+    EditWindowsComponent
   ],
   imports: [
     BrowserModule,

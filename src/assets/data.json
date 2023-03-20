@@ -1,6 +1,6 @@
 {
     "header": {
-        "logo":"././assets/img/ArgProg logo.png",
+        "logo":"img/ArgProg logo.png",
         "bannerImg": "././assets/img/bannerImg.png",
         "bannerPhrase": "fraseBanner",
         "bannerDetail": "detalles de banner"
